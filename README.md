@@ -3,6 +3,13 @@
 Use the certbot client to generate and install a certificate to be used with
 an AWS CloudFront distribution of an S3 bucket.
 
+### Quick install using Docker on Windows for apex and www domains:
+
+* Run `docker build . -t certbot-s3front`
+* Copy `env.example.ps1` to `env.ps1` and fill in the details
+* Run `./env`
+* Run `./install`
+
 ### Before you start
 
 Follow a guide like this one [https://docs.aws.amazon.com/gettingstarted/latest/swh/website-hosting-intro.html](https://docs.aws.amazon.com/gettingstarted/latest/swh/website-hosting-intro.html)
