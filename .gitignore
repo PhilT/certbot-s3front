@@ -25,3 +25,5 @@ certbot.log
 .env
 env.list
 env.ps1
+
+install-all.ps1
