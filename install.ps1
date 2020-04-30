@@ -1,3 +1,6 @@
+$DOMAIN = $args[0]
+$CLOUDFRONT_DISTRIBUTION_ID = $args[1]
+
 docker run --rm --name lets-encrypt -it `
   -v ./letsencrypt/:/etc/letsencrypt `
   -e AWS_ACCESS_KEY_ID=$env:AWS_ACCESS_KEY_ID `
@@ -7,8 +10,8 @@ docker run --rm --name lets-encrypt -it `
     --agree-tos `
     -a certbot-s3front:auth `
     -i certbot-s3front:installer `
-    --certbot-s3front:auth-s3-bucket $env:DOMAIN `
+    --certbot-s3front:auth-s3-bucket $DOMAIN `
     --certbot-s3front:auth-s3-region eu-west-2 `
-    --certbot-s3front:installer-cf-distribution-id $env:CLOUDFRONT_DISTRIBUTION_ID `
+    --certbot-s3front:installer-cf-distribution-id $CLOUDFRONT_DISTRIBUTION_ID `
     -d $env:DOMAIN `
     -d www.$env:DOMAIN
